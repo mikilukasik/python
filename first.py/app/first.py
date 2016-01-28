@@ -37,6 +37,25 @@ if convert_to_queue:
         for x in range(len(converted_lst)):
             print converted_lst.popleft()
     
+def highest(x,y):
+
+    if int(y)>int(x):
+        return y
+    else:
+        return x
+    
+def is_number(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
+
+    
+numbers=filter(is_number,lst)
+print 'the highest number in your list:',reduce(highest,numbers)
+#convert_to_queue=inputs.yn()
+
 
 
 
