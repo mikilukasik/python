@@ -10,6 +10,9 @@ def askYN():
         print "Type 'y' or 'n'"
         return askYN()
 
+def squareForTesting(a):
+    
+    return a**2
 
 
 userName=raw_input('UserName:') #, please input your name:"
