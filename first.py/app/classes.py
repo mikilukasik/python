@@ -1,5 +1,5 @@
 class Inputs(object):
-    def askYN(self):
+    def yn(self):
         'validated y/n input'
 
         ret=raw_input('y/n:')
@@ -9,7 +9,7 @@ class Inputs(object):
             return 0
         else:
             print "Type 'y' or 'n'"
-            return self.askYN()
+            return self.yn()
 
 class Calculator(object):
     
