@@ -1,9 +1,11 @@
 from classes import Inputs
+from defs import ReduceFuncs
 
 from collections import deque
 queue=deque([])
 
 inputs=Inputs()
+reducefuncs=ReduceFuncs()
 
 userName=raw_input('UserName:') 
 
@@ -37,44 +39,10 @@ if convert_to_queue:
         for x in range(len(converted_lst)):
             print converted_lst.popleft()
     
-def highest(x,y):
 
-    if y>x:
-        return y
-    else:
-        return x
-        
-def longest(x,y):
 
-    if len(y)>len(x):
-        return y
-    else:
-        return x
-    
-def is_number(s):
-    try:
-        float(s)
-        return True
-    except ValueError:
-        return False
-
-def is_string(s):
-
-    if isinstance(s, basestring):
-   
-        try:
-            float(s)
-            return False
-        except ValueError:
-            return True
-      
-    else:
-        return False
-
-    
-
-print 'the highest number in your list:',reduce(highest,filter(is_number,lst))
-print 'the longest string in your list:',reduce(longest,filter(is_string,lst))
+print 'the highest number in your list:',reducefuncs.highest_number(lst)
+print 'the longest string in your list:',reducefuncs.longest_string(lst)
 #convert_to_queue=inputs.yn()
 
 
