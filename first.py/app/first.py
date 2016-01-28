@@ -1,4 +1,8 @@
 from classes import Inputs
+
+from collections import deque
+queue=deque([])
+
 inputs=Inputs()
 
 userName=raw_input('UserName:') 
@@ -15,7 +19,9 @@ if wannaSeeThat:
 else:
     print 'Good choice.',
     
-
+print 'now you can fill up a list.'
+lst=inputs.lst()
+print 'your list:',lst
 
 
 
