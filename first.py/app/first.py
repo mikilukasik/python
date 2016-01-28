@@ -1,7 +1,7 @@
 from classes import Inputs
 inputs=Inputs()
 
-userName=raw_input('UserName:') #, please input your name:"
+userName=raw_input('UserName:') 
 
 print "Hello",userName+", what's going on?"
 goingOn=raw_input('Answer:')
