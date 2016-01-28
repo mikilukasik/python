@@ -23,7 +23,20 @@ print 'now you can fill up a list.'
 lst=inputs.lst()
 print 'your list:',lst
 
+print 'would you like to convert this to a queue?'
+convert_to_queue=inputs.yn()
 
+if convert_to_queue:
+    converted_lst=deque(lst)
+    print 'new queue:',converted_lst
+    
+    print 'would you like to pop this whole queue from the left?'
+    pop_queue=inputs.yn()
+    
+    if pop_queue:
+        for x in range(len(converted_lst)):
+            print converted_lst.popleft()
+    
 
 
 
