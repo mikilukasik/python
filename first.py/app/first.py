@@ -1,11 +1,29 @@
-from classes import Inputs
-from defs import ReduceFuncs
+#from classes import Inputs
+from classes import ReduceFuncs,PlayWithString,Inputs
+#from defs import PlayWithSting
 
 from collections import deque
-queue=deque([])
 
 inputs=Inputs()
 reducefuncs=ReduceFuncs()
+playWithString=PlayWithString()
+
+def playMoreWithString():
+    print 'would you like to play with another string?',
+    play_with_string=inputs.yn()
+
+    if play_with_string:
+        other_string=raw_input('String to play with:')
+        playWithString.playws(other_string)
+        playMoreWithString()
+   
+        
+        
+        
+        
+        
+        
+################################
 
 userName=raw_input('UserName:') 
 
@@ -21,35 +39,38 @@ if wannaSeeThat:
 else:
     print 'Good choice.',
     
-print 'now you can fill up a list.'
+print 'Now you can fill up a list.'
 lst=inputs.lst()
 print 'your list:',lst
 
-print 'would you like to convert this to a queue?'
+print 'would you like to convert this to a queue?',
 convert_to_queue=inputs.yn()
 
 if convert_to_queue:
     converted_lst=deque(lst)
     print 'new queue:',converted_lst
     
-    print 'would you like to pop this whole queue from the left?'
+    print 'would you like to pop this whole queue from the left?',
     pop_queue=inputs.yn()
     
     if pop_queue:
         for x in range(len(converted_lst)):
             print converted_lst.popleft()
-    
-
-
+  
 print 'the highest number in your list:',reducefuncs.highest_number(lst)
-print 'the longest string in your list:',reducefuncs.longest_string(lst)
-#convert_to_queue=inputs.yn()
+longest_string=reducefuncs.longest_string(lst)
+print 'the longest string in your list:',longest_string
 
+print 'would you like to play with this string?',
+play_with_string=inputs.yn()
 
-
-
-
-
+if play_with_string:
+    playWithString.playws(longest_string)
+    playMoreWithString()
+else:
+    other_string=raw_input('String to play with:')
+    playWithString.playws(other_string)
+    playMoreWithString()
 
 
 
