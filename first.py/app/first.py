@@ -39,7 +39,14 @@ if convert_to_queue:
     
 def highest(x,y):
 
-    if int(y)>int(x):
+    if y>x:
+        return y
+    else:
+        return x
+        
+def longest(x,y):
+
+    if len(y)>len(x):
         return y
     else:
         return x
@@ -51,9 +58,23 @@ def is_number(s):
     except ValueError:
         return False
 
+def is_string(s):
+
+    if isinstance(s, basestring):
+   
+        try:
+            float(s)
+            return False
+        except ValueError:
+            return True
+      
+    else:
+        return False
+
     
-numbers=filter(is_number,lst)
-print 'the highest number in your list:',reduce(highest,numbers)
+
+print 'the highest number in your list:',reduce(highest,filter(is_number,lst))
+print 'the longest string in your list:',reduce(longest,filter(is_string,lst))
 #convert_to_queue=inputs.yn()
 
 
