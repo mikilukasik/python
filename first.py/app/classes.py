@@ -3,9 +3,9 @@ class Inputs(object):
         'validated y/n input'
 
         ret=raw_input('y/n:')
-        if ret=='y':
+        if ret in ('y','yes','Y'):
             return 1
-        elif ret=='n':
+        elif ret in ('n','no','N'):
             return 0
         else:
             print "Type 'y' or 'n'"
