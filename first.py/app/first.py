@@ -1,27 +1,13 @@
-def askYN():
-    'validated y/n input'
-
-    ret=raw_input('y/n:')
-    if ret=='y':
-        return 1
-    elif ret=='n':
-        return 0
-    else:
-        print "Type 'y' or 'n'"
-        return askYN()
-
-def squareForTesting(a):
-    
-    return a**2
-
+from classes import Inputs
+inputs=Inputs()
 
 userName=raw_input('UserName:') #, please input your name:"
 
 print "Hello",userName+", what's going on?"
-goingOn=raw_input('Ansver:')
+goingOn=raw_input('Answer:')
 
 print 'would you like me to put that here a thousand times?',
-wannaSeeThat=askYN()
+wannaSeeThat=inputs.askYN()
 
 if wannaSeeThat:
     for x in range(1000):
