@@ -59,11 +59,18 @@ class ReduceFuncs(object):
 
 class PlayWithString(object):
 
-    def playws(self,string):
+    def playws(self,string,includemiddle=True):
     
-        print 'getfirsthalf (includemiddle:true):',localDefs.getfirsthalf(string)
-        print 'getfirsthalf (includemiddle:false):',localDefs.getfirsthalf(string,False)
+        str_includemiddle=localDefs.getfirsthalf(string)
+        str_nomiddle=localDefs.getfirsthalf(string,False)
+    
+        print 'getfirsthalf (includemiddle:true):',str_includemiddle
+        print 'getfirsthalf (includemiddle:false):',str_nomiddle
         
+        if includemiddle:    
+            return str_includemiddle
+        else:
+            return str_nomiddle
         
  
  
@@ -93,10 +100,14 @@ class Inputs(object):
         return ret_list
                               
 
-class Calculator(object):       #unit tests only
+#################################unit tests only
+
+class Calculator(object):       
     
     def square(self,a):
         return a**2
         
     def adder(self,a,b):
         return a+b
+        
+        
