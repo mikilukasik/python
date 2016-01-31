@@ -1,5 +1,3 @@
-    
-
 class LocalDefs(object):
                         
     def getfirsthalf(self,string,includemiddle=True):
@@ -48,7 +46,7 @@ localDefs=LocalDefs()
 
 class ReduceFuncs(object):
     
-    def localDefs.highest_number(self,lst):
+    def highest_number(self,lst):
         tmp=filter(localDefs.is_number,lst)
         if len(tmp)>0: 
             return reduce(localDefs.highest,tmp)

@@ -8,7 +8,7 @@ from app.classes import Calculator,PlayWithString
 calculator = Calculator()
 playWithString = PlayWithString()
 
-class TddInPythonExample(unittest.TestCase):
+class test_calculator(unittest.TestCase):
  
     def test_calculator_square_method_returns_correct_result(self):
         
@@ -19,6 +19,8 @@ class TddInPythonExample(unittest.TestCase):
        
         result = calculator.adder(2,3)
         self.assertEqual(5, result)
+        
+class test_playwithstring(unittest.TestCase):
   
     def test_playwithstring_half_inc(self):
        
