@@ -39,8 +39,24 @@ class test_etc(unittest.TestCase):
      
      def test_callwithanyargs_function(self):
         
-        result = etc.callwithanyargs('first unnamed','second unnamed',first_named='firstnamedval',second_named='secondnamedval')
+        result = etc.callwithNameAndTitle('miki','mr')
+        self.assertEqual('mr miki',result)
+        
+        result = etc.callwithNameAndTitle('','')
         self.assertEqual('',result)
+        
+        result = etc.callwithNameAndTitle('miki','')
+        self.assertEqual('miki',result)
+        
+        result = etc.callwithNameAndTitle('miki')
+        self.assertEqual('miki',result)
+        
+        result = etc.callwithNameAndTitle('','miki')
+        self.assertEqual('miki',result)
+        
+        result = etc.callwithNameAndTitle()
+        self.assertEqual('',result)
+        
         
   
 if __name__ == '__main__':

@@ -103,9 +103,15 @@ class PlayWithString(object):
  
 class Etc(object):
 
-    def callwithanyargs(self,*arguments, **keywords):
+    def callwithNameAndTitle(self,name='',title=''):
     
-        pass 
+       if name and title:
+        
+            return title+' '+name
+        
+       else:
+            
+            return name+title 
 
 #################################unit tests only
 
