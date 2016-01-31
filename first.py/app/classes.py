@@ -44,6 +44,33 @@ class LocalDefs(object):
 
 localDefs=LocalDefs()
 
+class Inputs(object):
+    def yn(self):
+        """validated y/n input"""
+
+        while True:
+            ret=raw_input('y/n:')
+            if ret in ('y','yes','Y'):
+                return 1
+            elif ret in ('n','no','N'):
+                return 0
+            else:
+                print "Type 'y' or 'n'"
+                
+    def lst(self):
+        """fills a new list until /q entered"""
+    
+        ret_list=[]
+        ret=''
+        while ret!='/q':
+            ret=raw_input("Add to list (type '/q' when done)")
+            if ret!='/q':
+                ret_list.append(ret)
+        
+        return ret_list
+                              
+
+
 class ReduceFuncs(object):
     
     def highest_number(self,lst):
@@ -74,32 +101,11 @@ class PlayWithString(object):
             return str_nomiddle
         
  
- 
-class Inputs(object):
-    def yn(self):
-        """validated y/n input"""
+class Etc(object):
 
-        while True:
-            ret=raw_input('y/n:')
-            if ret in ('y','yes','Y'):
-                return 1
-            elif ret in ('n','no','N'):
-                return 0
-            else:
-                print "Type 'y' or 'n'"
-                
-    def lst(self):
-        """fills a new list until /q entered"""
+    def callwithanyargs(self,*arguments, **keywords):
     
-        ret_list=[]
-        ret=''
-        while ret!='/q':
-            ret=raw_input("Add to list (type '/q' when done)")
-            if ret!='/q':
-                ret_list.append(ret)
-        
-        return ret_list
-                              
+        pass 
 
 #################################unit tests only
 
