@@ -30,21 +30,7 @@ class TddInPythonExample(unittest.TestCase):
         result = playWithString.playws('hhh',False)
         self.assertEqual('h', result)
     
-    # def test_calculator_add_method_returns_correct_result(self):
-       
-    #     result = calculator.adder(2,3)
-    #     self.assertEqual(5, result)
-    
-    # def test_calculator_add_method_returns_correct_result(self):
-       
-    #     result = calculator.adder(2,3)
-    #     self.assertEqual(5, result)
-    
-    # def test_calculator_add_method_returns_correct_result(self):
-       
-    #     result = calculator.adder(2,3)
-    #     self.assertEqual(5, result)
-    
+     
   
 if __name__ == '__main__':
     unittest.main()

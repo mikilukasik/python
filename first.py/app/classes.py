@@ -1,36 +1,4 @@
-def highest(x,y):
-
-    if y>x:
-        return y
-    else:
-        return x
-        
-def longest(x,y):
-
-    if len(y)>len(x):
-        return y
-    else:
-        return x
     
-def is_number(s):
-    try:
-        float(s)
-        return True
-    except ValueError:
-        return False
-
-def is_string(s):
-
-    if isinstance(s, basestring):
-
-        try:
-            float(s)
-            return False
-        except ValueError:
-            return True
-    
-    else:
-        return False
 
 class LocalDefs(object):
                         
@@ -40,20 +8,55 @@ class LocalDefs(object):
             return string[:ln/2+ln%2]
         else:
             return string[:ln/2]
+            
+            
+    def highest(x,y):
+
+        if y>x:
+            return y
+        else:
+            return x
+            
+    def longest(x,y):
+
+        if len(y)>len(x):
+            return y
+        else:
+            return x
+        
+    def is_number(s):
+        try:
+            float(s)
+            return True
+        except ValueError:
+            return False
+
+    def is_string(s):
+
+        if isinstance(s, basestring):
+
+            try:
+                float(s)
+                return False
+            except ValueError:
+                return True
+        
+        else:
+            return False
 
 localDefs=LocalDefs()
 
 class ReduceFuncs(object):
     
-    def highest_number(self,lst):
-        tmp=filter(is_number,lst)
+    def localDefs.highest_number(self,lst):
+        tmp=filter(localDefs.is_number,lst)
         if len(tmp)>0: 
-            return reduce(highest,tmp)
+            return reduce(localDefs.highest,tmp)
        
     def longest_string(self,lst):
-        tmp=filter(is_string,lst)
+        tmp=filter(localDefs.is_string,lst)
         if len(tmp)>0:
-            return reduce(longest,tmp)
+            return reduce(localDefs.longest,tmp)
             
             
 
@@ -61,11 +64,11 @@ class PlayWithString(object):
 
     def playws(self,string,includemiddle=True):
     
-        str_includemiddle=localDefs.getfirsthalf(string)
+        str_includemiddle=localDefs.getfirsthalf(string)    # could be localDefs.getfirsthalf(string,True)
         str_nomiddle=localDefs.getfirsthalf(string,False)
     
-        print 'getfirsthalf (includemiddle:true):',str_includemiddle
-        print 'getfirsthalf (includemiddle:false):',str_nomiddle
+        print 'getfirsthalf (include middle char):',str_includemiddle
+        print 'getfirsthalf (exclude middle char):',str_nomiddle
         
         if includemiddle:    
             return str_includemiddle
@@ -93,7 +96,7 @@ class Inputs(object):
         ret_list=[]
         ret=''
         while ret!='/q':
-            ret=raw_input("Add to list (type '/q to quit')")
+            ret=raw_input("Add to list (type '/q' when done)")
             if ret!='/q':
                 ret_list.append(ret)
         
