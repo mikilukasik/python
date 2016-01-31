@@ -1,12 +1,13 @@
 import unittest
  
-from app.classes import Calculator,PlayWithString
+from app.classes import Calculator,PlayWithString,Etc
 #from app.classes import Calculator
 
 
 
 calculator = Calculator()
 playWithString = PlayWithString()
+etc = Etc()
 
 class test_calculator(unittest.TestCase):
  
@@ -32,7 +33,15 @@ class test_playwithstring(unittest.TestCase):
         result = playWithString.playws('hhh',False)
         self.assertEqual('h', result)
     
+
+
+class test_etc(unittest.TestCase):
      
+     def test_callwithanyargs_function(self):
+        
+        result = etc.callwithanyargs('first unnamed','second unnamed',first_named='firstnamedval',second_named='secondnamedval')
+        self.assertEqual('',result)
+        
   
 if __name__ == '__main__':
     unittest.main()
