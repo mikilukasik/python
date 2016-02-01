@@ -105,13 +105,18 @@ class Etc(object):
 
     def callwithNameAndTitle(self,name='',title=''):
     
-       if name and title:
-        
+        if name and title:
+
             return title+' '+name
-        
-       else:
+
+        else:
             
-            return name+title 
+            return name+title
+            
+    def anyArgs(self,*args):
+    
+        return ' '.join(args)
+     
 
 #################################unit tests only
 

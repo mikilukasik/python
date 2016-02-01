@@ -1,9 +1,6 @@
 import unittest
  
 from app.classes import Calculator,PlayWithString,Etc
-#from app.classes import Calculator
-
-
 
 calculator = Calculator()
 playWithString = PlayWithString()
@@ -37,7 +34,7 @@ class test_playwithstring(unittest.TestCase):
 
 class test_etc(unittest.TestCase):
      
-     def test_callwithanyargs_function(self):
+    def test_callwithNameAndTitle_function(self):
         
         result = etc.callwithNameAndTitle('miki','mr')
         self.assertEqual('mr miki',result)
@@ -58,6 +55,18 @@ class test_etc(unittest.TestCase):
         self.assertEqual('',result)
         
         
-  
+    def test_anyArgs_function(self):
+        
+        result = etc.anyArgs('mr','miki','lukasik')
+        self.assertEqual('mr miki lukasik',result)
+        
+        result = etc.anyArgs()
+        self.assertEqual('',result)
+        
+        result = etc.anyArgs([1,2,'rrr',[4,5]])
+        self.assertEqual('',result)
+        
+    
+
 if __name__ == '__main__':
     unittest.main()
